@@ -14,6 +14,9 @@
           <div class="logo">xoart</div>
           <div class="nav-link"><a href="./kontakt.html">Kontakt</a></div>
     </header>
+    <div class="spinner">
+      <div class="spinner-inner"></div>
+    </div>
       <main>
         <section id="images">
           <div class="gallery">
@@ -22,8 +25,8 @@
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
                   </div>
-                  <div class="flip-card-back">
-                    <a href="./obrazy.html"><img src="obraz1.png" class="picture" alt="Back image"></a>
+                  <div class="flip-card-back ">
+                    <a href="./obrazy.html"><img src="obraz2.png" class="picture" alt="Back image"></a>
                   </div>
                 </div>
               </div>
@@ -114,5 +117,25 @@
           </div>
         </section>
       </main>
+      <script>
+        const spinner = document.querySelector('.spinner');
+        const body = document.querySelector('main');
+
+        function showSpinner() {
+          spinner.style.display = 'inline-block';
+          body.classList.add('spinner-active');
+        }
+        function hideSpinner() {
+          spinner.style.display = 'none';
+          body.classList.remove('spinner-active');
+        }
+
+        window.addEventListener('load', function() {
+          showSpinner();
+          setTimeout(function() {
+            hideSpinner();
+          }, 2000);
+        });
+      </script>
 </body>
 </html>
