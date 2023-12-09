@@ -344,6 +344,10 @@ main {
     /* box-sizing: border-box; */
   }
 
+  .square-middle-middle {
+    transform: none;
+  }
+
   .square img {
     z-index: 1;
   }
