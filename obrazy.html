@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const cena = urlParams.get("cena");
+        const opis = urlParams.get("opis");
+        const srcObrazu = urlParams.get("nazwa");
+
+        document.getElementById("cenaObrazu").textContent = cena;
+        document.getElementById("opisObrazu").textContent = opis;
+        document.getElementById("dynamicznyObraz").src = srcObrazu;
+      });
+    </script>
     <header>
       <a href="./obrazy.html">OBRAZY</a>
       <a href="./index.html"><div class="logo">xoart</div></a>
@@ -15,11 +27,11 @@
     </header>
     <div class="paintings">
       <div class="single-picture">
-        <img src="obraz_test.jpg" alt="Logo" class="picture" />
+        <img id="dynamicznyObraz" src="" alt="Obraz" class="picture" />
       </div>
       <section id="description">
-        <p>2000 PLN</p>
-        <p>Olej na płótnie | 100x100</p>
+        <p id="cenaObrazu"></p>
+        <p id="opisObrazu"></p>
       </section>
     </div>
   </body>
